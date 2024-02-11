@@ -1,4 +1,4 @@
-# nand2tetris project files
+# nand2tetris: computing from first principles
 
 Each folder contains the project tasks for each of the 12 chapter.
 
