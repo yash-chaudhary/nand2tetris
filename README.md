@@ -1,2 +1,8 @@
-# nand2tetris
-Going on a journey to understand computers from first principles using from the book Elements of Computing Systems by Noam Nisan and  Shimon Schocken
+# nand2tetris project files
+
+Each folder contains the project tasks for each chapter.
+
+Refer to their [website](https://www.nand2tetris.org/) if you want to understand the computers from the ground up 
+
+Projects:
+* 01: Boolean Logic
