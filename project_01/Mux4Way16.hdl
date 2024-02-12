@@ -1,0 +1,31 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// Implementation by Yash Chaudhary
+// File name: projects/01/Mux4Way16.hdl
+/**
+ * 4-way 16-bit multiplexor:
+ * out = a if sel == 00
+ *       b if sel == 01
+ *       c if sel == 10
+ *       d if sel == 11
+ */
+CHIP Mux4Way16 {
+    IN a[16], b[16], c[16], d[16], sel[2];
+    OUT out[16];
+    
+    // Add implementation here
+    PARTS:
+    // 4 way mux means four possible 16-bit inputs to select from
+    // Since there are 4 inputs to choose from select line needs to
+    // have a bit width large enough to be able to map 4 combinations of bits
+    // can use the formula log2(m) where m is the number of inputs
+    // therefore log2(4) means select line needs to be 2-bits wide.
+    
+    // Mux16 is able to give us the chosen output based on 2 inputs
+    // therefore using sel[0] we can figure out if a/b and c/d are chosen
+    // using sel[1] we can then figure out the exact output
+    Mux16(a=a, b=b, sel=sel[0], out=ab);
+    Mux16(a=c, b=d, sel=sel[0], out=cd);
+    Mux16(a=ab, b=cd, sel=sel[1], out=out);
+}

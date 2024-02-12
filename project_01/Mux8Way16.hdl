@@ -1,0 +1,38 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// Implementation by Yash Chaudhary
+// File name: projects/01/Mux8Way16.hdl
+/**
+ * 8-way 16-bit multiplexor:
+ * out = a if sel == 000
+ *       b if sel == 001
+ *       ...
+ *       h if sel == 111
+ */
+CHIP Mux8Way16 {
+    IN a[16], b[16], c[16], d[16],
+       e[16], f[16], g[16], h[16],
+       sel[3];
+    OUT out[16];
+    
+    // Add implementation here
+    PARTS:
+    
+    // Since this is an 8 input Mux we need to have select lines
+    // with the appropriate bit width, or in other words
+    // how many bits are required to make 8 unique combinations of bits
+    // we know that 3 bits produce 8 numbers 0 to 7 or alternatively we
+    // can use formula log2(m) where m is the number of inputs
+    // hence log2(8) yields 3 
+
+    // previously we build a Mux4Way16 which can take 4 inputs and produce and output
+    // in exactly the same way we first provide 4/8 inputs to 2 of the  4 input mux along with
+    // 2 of the select line (first two from the right) this will return 2 possible choices
+    // the last Mux can be a simple 2 input Mux that uses the MSB (most significant bit) of the
+    // 3-bit select lines because we only need to select between 2 16-bits at the end
+
+    Mux4Way16(a=a, b=b, c=c, d=d, sel=sel[0..1], out=abcd);
+    Mux4Way16(a=e, b=f, c=g, d=h, sel=sel[0..1], out=efgh);
+    Mux16(a=abcd, b=efgh, sel=sel[2], out=out);
+}
