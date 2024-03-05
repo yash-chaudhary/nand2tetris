@@ -7,3 +7,4 @@ Refer to their [website](https://www.nand2tetris.org/) if you want to understand
 Projects:
 * 01: Boolean Logic
 * 02: Boolean Arithmetic
+* 03: Memory
