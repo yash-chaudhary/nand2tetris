@@ -7,7 +7,8 @@ Important takeaway: Reading and writing to memory is quick as combinational logi
 Goal: Understand how memory devices in computers work and their building blocks
 
 Deliverables:
-* Bit (primitive DFF provided as lowest level of abstraction)
+* DFF (memory primitive given out value equal to in)
+* Bit (use DFF to set out to previous out or new in value)
 * Register (build on DFFs)
 * Program Counter (aka PC - uses both DFFs and Incrementor chip) 
 * RAM8 (builds on registers)
