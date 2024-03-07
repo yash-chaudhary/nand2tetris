@@ -1,4 +1,4 @@
-# Project 02: Boolean Arithmetic
+# Project 03: Memory
 
 Task: Use HDL (hardware description language) to build fundamental memory chips starting from provided data flip-flops (DFFs) to building n-bit registers and m-register RAM devices.
 
