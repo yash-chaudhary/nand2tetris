@@ -8,3 +8,4 @@ Projects:
 * 01: Boolean Logic
 * 02: Boolean Arithmetic
 * 03: Memory
+* 04: Machine Language
