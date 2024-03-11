@@ -1,44 +1,51 @@
-// Program: Multiplies R0 and R1 and stores the result in R2
+// Program: Multiply numbers such that R2 = R0 * R2
+
+// Pseudocode
+
+// i = 1 
+// sum = 0
+//
+// if (i == R0) goto END
+// else sum = sum + R1
+//
+// i = i = 1 goto LOOP
+
 
 // Implementation
 
-// Multiplication is the same as adding the same number together x number of times
-
-// use variable i to track number of times we have looped 
+// define variable i as a counter
 @i
-M = 0	// set i=0
+M = 0	 // initialise i to 0
 
-// initialise R0 to 0
+// R2  to hold cumulative sum
 @R2
-M = 0	// set R2=0
+M = 0	// initialise sum to 0
 
-// start a loop that will add R1 to R2 for the amount of R0
+// loop iterating R0 times and each time adding R1 to sum variable
 (LOOP)
+    // if i == R0 (terminate loop if i == R1)
+    @i
+    D = M
+    @R0
+    D = D - M
+    @END	// goto address of END if condition satisfied
+    D;JEQ
 
-@i
-D=M	// set D = i
+    // R2  = R2 + R1 (add to cumulative sum)
+    @R1
+    D = M
+    @R2
+    M = M + D
 
-@R0     // retrieve the number of times we will add R1 to R2 cumulative sum (AKA multiplication)
-D=D-M	// check if D=M at which point D=0 and multiplication complete
-@END
-D;JEQ   // when D=0 jump to end of program
+    // i = i + 1 (increment counter)
+    @i
+    M = M + 1
 
-// the following runs if D not equal to M
+    // go back to start of loop
+    @LOOP
+    0;JMP
 
-@R1	// retrieve value of R1
-D = M
-
-@R2
-M=M+D	// cumulative sum of previous R2 value and new R1 value
-
-// increment variable i
-@i
-M=M+1
-
-@LOOP
-0;JMP	// go to start of loop again
-
-// handle termination
+// end of program (infinite loop)
 (END)
-@END
-0;JMP
+    @END
+    0;JMP 
