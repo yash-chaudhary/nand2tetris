@@ -9,3 +9,4 @@ Projects:
 * 02: Boolean Arithmetic
 * 03: Memory
 * 04: Machine Language
+* 05: Computer Architecture
