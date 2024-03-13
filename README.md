@@ -10,3 +10,4 @@ Projects:
 * 03: Memory
 * 04: Machine Language
 * 05: Computer Architecture
+* 06: Assembler
