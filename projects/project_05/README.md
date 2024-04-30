@@ -1,7 +1,5 @@
 Task: Build a computer using the von-Neumann architecture which includes ROM for instruction memory, RAM for data memory and a CPU for computation.
 
-Important takeaways:
-
 Goal: To build a computer using HDL.
 
 Deliverables:
